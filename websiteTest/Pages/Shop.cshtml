@@ -1,0 +1,38 @@
+﻿@page
+@model ShopModel
+
+<h1>Handla</h1>
+
+<form method="post">
+    <input type="text"
+           asp-for="NewItem"
+           placeholder="Skriv en vara..."
+           class="input-field" />
+
+    <button type="submit" class="add-button">
+        Lägg till
+    </button>
+</form>
+
+@if (ShopModel.ItemList.Any())
+{
+    <ul class="shopping-list">
+        @for (int i = 0; i < ShopModel.ItemList.Count; i++)
+        {
+            <li>
+                @ShopModel.ItemList[i]
+
+                <form method="post" asp-page-handler="TaBort" style="display:inline">
+                    <input type="hidden" name="index" value="@i" />
+                    <button type="submit" class="remove-button">X</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Inga varor i listan än.</p>
+}
+
+<a href="/" class="back-link">⬅ Tillbaka</a>

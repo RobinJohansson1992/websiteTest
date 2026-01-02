@@ -22,7 +22,7 @@
             <li>
                 @ShopModel.ItemList[i]
 
-                <form method="post" asp-page-handler="TaBort" style="display:inline">
+                <form method="post" asp-page-handler="Remove" style="display:inline">
                     <input type="hidden" name="index" value="@i" />
                     <button type="submit" class="remove-button">X</button>
                 </form>

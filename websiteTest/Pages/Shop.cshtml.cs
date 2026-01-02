@@ -28,7 +28,7 @@ namespace websiteTest.Pages
             {
                 ItemList.RemoveAt(index);
             }
-            return Page();
+            return RedirectToPage();
         }
     }
 }

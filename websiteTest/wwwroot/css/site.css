@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     margin-top: 60px;
     background-color: lightsteelblue;
 }
@@ -39,30 +39,31 @@ h1 {
 }
 
 .big-button {
-    width: 75%;
+    width: 90%;
     max-width: 500px;
     text-align: center;
-    padding: 13px 0;
-    font-size: 22px;
+    padding: 16px 0;
+    font-size: 20px;
     background-color: cornflowerblue;
     color: white;
     text-decoration: none;
-    border-radius: 10px;
-    border: 1px solid white;
+    border-radius: 30px;
+    border: 2px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-    .big-button:hover {
+    .big-button:active {
         background-color: royalblue;
     }
 
 .input-field {
-    padding: 10px;
+    padding: 17px;
     font-size: 16px;
     width: 280px;
     margin-top: 20px;
     background-color: aliceblue;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 p{
@@ -70,16 +71,18 @@ p{
 }
 
 .add-button {
-    padding: 10px 15px;
+    padding: 17px 15px;
     margin-left: 10px;
     font-size: 16px;
-    background-color: darkseagreen;
-    border-radius: 10px;
-}
-
-.add-button:hover{
+    color: white;
     background-color: mediumseagreen;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+    .add-button:active {
+        background-color: darkseagreen;
+    }
 
 .shopping-list {
     margin-top: 30px;
@@ -89,31 +92,88 @@ p{
 }
 
     .shopping-list li {
-        padding: 7px;
-        margin-bottom: 10px;
+        padding: 12px;
+        margin-bottom: 12px;
         background-color: aliceblue;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 380px;
         border-radius: 10px;
+        font-size: 18px;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
 .remove-button {
     background-color: indianred;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 3px 12px;
     cursor: pointer;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
-.remove-button:hover{
+.remove-button:active{
     background-color: darkred;
 }
 
 .back-link {
     display: inline-block;
     margin-top: 30px;
+}
+.date-time-row {
+    display: flex;
+    gap: 10px;
+}
+
+.small-field {
+    flex: 0 0 auto;
+    width: 133px;
+    font-size: 14px;
+    padding: 8px;
+}
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background-color: lightsteelblue;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.back-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+}
+.back-button:active {
+    background-color: royalblue;
+}
+
+@media (max-width: 600px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-field {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .add-button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
 }
 

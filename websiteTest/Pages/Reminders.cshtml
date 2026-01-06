@@ -1,8 +1,58 @@
 ﻿@page
+@model KomIhogModel
 
 <h1>Kom ihåg</h1>
-<p>Här kan jag lägga notiser...</p>
 
-@model websiteTest.Pages.RemindersModel
-@{
+<form method="post">
+
+    <div class="date-time-row">
+        <input type="date" asp-for="Datum" class="input-field small-field" />
+        <input type="time" asp-for="Tid" class="input-field small-field" />
+    </div>
+
+    <input type="text"
+           asp-for="Handelse"
+           placeholder="Vad ska du komma ihåg?"
+           class="input-field" />
+
+    <button type="submit" class="add-button">
+        Lägg till
+    </button>
+</form>
+
+@if (KomIhogModel.Lista.Any())
+{
+    <ul class="shopping-list">
+        @for (int i = 0; i < KomIhogModel.Lista.Count; i++)
+        {
+            var item = KomIhogModel.Lista[i];
+
+            <li>
+                <div>
+                    <strong>@item.Handelse</strong><br />
+                    <small>
+                        @item.Datum.ToString("yyyy-MM-dd")
+                        kl @item.Tid
+                    </small>
+                </div>
+
+                <form method="post" asp-page-handler="TaBort">
+                    <input type="hidden" name="index" value="@i" />
+                    <button type="submit" class="remove-button">
+                        Ta bort
+                    </button>
+                </form>
+            </li>
+        }
+    </ul>
 }
+else
+{
+    <p>Inga händelser än.</p>
+}
+
+<div class="bottom-bar">
+    <a href="/" class="add-button back-button">
+        Tillbaka
+    </a>
+</div>

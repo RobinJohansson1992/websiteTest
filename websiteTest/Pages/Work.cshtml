@@ -1,8 +1,61 @@
 ﻿@page
+@model ArbeteModel
 
 <h1>Arbete</h1>
-<p>Här kan jag lägga in mina arbetspass...</p>
 
-@model websiteTest.Pages.WorkModel
-@{
+<form method="post">
+
+    <input type="time"
+           asp-for="StartTid"
+           class="input-field small-field" />
+
+    <input type="time"
+           asp-for="SlutTid"
+           class="input-field small-field" />
+
+    <input type="date"
+           asp-for="Datum"
+           class="input-field" />
+
+    <button type="submit" class="add-button">
+        Lägg till
+    </button>
+</form>
+
+@if (ArbeteModel.Lista.Any())
+{
+    <ul class="shopping-list">
+        @for (int i = 0; i < ArbeteModel.Lista.Count; i++)
+        {
+            var item = ArbeteModel.Lista[i];
+
+            <li>
+                <div>
+                    <strong>
+                        @item.Datum.ToString("yyyy-MM-dd")
+                    </strong><br />
+                    <small>
+                        @item.StartTid – @item.SlutTid
+                    </small>
+                </div>
+
+                <form method="post" asp-page-handler="TaBort">
+                    <input type="hidden" name="index" value="@i" />
+                    <button type="submit" class="remove-button">
+                        Ta bort
+                    </button>
+                </form>
+            </li>
+        }
+    </ul>
 }
+else
+{
+    <p>Inga arbetspass än.</p>
+}
+
+<div class="bottom-bar">
+    <a href="/" class="add-button back-button">
+       Tillbaka
+    </a>
+</div>

@@ -1,18 +1,20 @@
 ﻿@page
 @model ShopModel
 
-<h1>Handla</h1>
+@* <h1>Handla</h1> *@
 
-<form method="post">
-    <input type="text"
-           asp-for="NewItem"
-           placeholder="Skriv en vara..."
-           class="input-field" />
+<div class="shop-input">
+    <form method="post">
+        <input type="text"
+               asp-for="NewItem"
+               placeholder="Skriv en vara..."
+               class="input-field" />
 
-    <button type="submit" class="add-button">
-        Lägg till
-    </button>
-</form>
+        <button type="submit" class="add-button">
+            <span>Lägg till</span>
+        </button>
+    </form>
+</div>
 
 @if (ShopModel.ItemList.Any())
 {
@@ -37,6 +39,6 @@ else
 
 <div class="bottom-bar">
     <a href="/" class="add-button back-button">
-        Tillbaka
+        <span>T i l l b a k a</span>
     </a>
 </div>

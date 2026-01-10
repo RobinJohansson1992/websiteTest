@@ -19,7 +19,7 @@ namespace websiteTest.Pages
                 ItemList.Add(NewItem);
                 NewItem = string.Empty;
             }
-            return Page();
+            return RedirectToPage();
         }
 
         public IActionResult OnPostRemove(int index)

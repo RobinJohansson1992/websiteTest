@@ -1,10 +1,16 @@
 ﻿@page
 @model ArbeteModel
 
-<h1>Arbete</h1>
+@* <h1>Arbete</h1> *@
 
 <form method="post">
 
+
+    <input type="date"
+           asp-for="Datum"
+           class="input-field" />
+
+   
     <input type="time"
            asp-for="StartTid"
            class="input-field small-field" />
@@ -13,13 +19,10 @@
            asp-for="SlutTid"
            class="input-field small-field" />
 
-    <input type="date"
-           asp-for="Datum"
-           class="input-field" />
-
     <button type="submit" class="add-button">
         Lägg till
     </button>
+
 </form>
 
 @if (ArbeteModel.Lista.Any())
@@ -56,6 +59,6 @@ else
 
 <div class="bottom-bar">
     <a href="/" class="add-button back-button">
-       Tillbaka
+        <span>T i l l b a k a</span>
     </a>
 </div>

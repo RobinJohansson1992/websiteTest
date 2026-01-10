@@ -1,20 +1,18 @@
 ﻿@page
 @model KomIhogModel
 
-<h1>Kom ihåg</h1>
+@* <h1>Kom ihåg</h1> *@
 
 <form method="post">
-
-    <div class="date-time-row">
-        <input type="date" asp-for="Datum" class="input-field small-field" />
-        <input type="time" asp-for="Tid" class="input-field small-field" />
-    </div>
 
     <input type="text"
            asp-for="Handelse"
            placeholder="Vad ska du komma ihåg?"
            class="input-field" />
 
+        <input type="date" asp-for="Datum" class="input-field small-field" />
+        <input type="time" asp-for="Tid" class="input-field small-field" />
+        
     <button type="submit" class="add-button">
         Lägg till
     </button>
@@ -53,6 +51,6 @@ else
 
 <div class="bottom-bar">
     <a href="/" class="add-button back-button">
-        Tillbaka
+        <span>T i l l b a k a</span>
     </a>
 </div>

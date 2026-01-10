@@ -5,20 +5,20 @@
 
 <form method="post">
 
-
     <input type="date"
            asp-for="Datum"
            class="input-field" />
 
-   
-    <input type="time"
+    <div class="date-time-row">
+
+        <input type="time"
            asp-for="StartTid"
            class="input-field small-field" />
 
     <input type="time"
            asp-for="SlutTid"
            class="input-field small-field" />
-
+           </div>
     <button type="submit" class="add-button">
         Lägg till
     </button>

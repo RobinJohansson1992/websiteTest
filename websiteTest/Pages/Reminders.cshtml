@@ -7,14 +7,14 @@
 
     <input type="text"
            asp-for="Handelse"
-           placeholder="Vad ska du komma ihåg?"
+           placeholder="What´s happening?"
            class="input-field" />
     <div class="date-time-row">
         <input type="date" asp-for="Datum" class="input-field small-field" />
         <input type="time" asp-for="Tid" class="input-field small-field" />
     </div>
     <button type="submit" class="add-button">
-        Lägg till
+        A d d T o L i s t
     </button>
     
 </form>
@@ -38,7 +38,7 @@
                 <form method="post" asp-page-handler="TaBort">
                     <input type="hidden" name="index" value="@i" />
                     <button type="submit" class="remove-button">
-                        Ta bort
+                        Delete
                     </button>
                 </form>
             </li>
@@ -47,11 +47,11 @@
 }
 else
 {
-    <p>Inga händelser än.</p>
+    <p>No happenings yet.</p>
 }
 
 <div class="bottom-bar">
     <a href="/" class="add-button back-button">
-        <span>T i l l b a k a</span>
+        <span>B A C K</span>
     </a>
 </div>

@@ -1,17 +1,19 @@
 ﻿@page
-@model ShopModel
+@model websiteTest.Pages.BuyModel
+@{
+}
 
 @* <h1>Handla</h1> *@
 
 <div class="shop-input">
     <form method="post">
         <input type="text"
-               asp-for="NewItem"
+               asp-for="NewItems"
                placeholder="Enter item..."
                class="input-field" />
    
         <button type="submit" class="add-button">
-    <span>A d d T o L i s t</span>
+            <span>A d d T o L i s t</span>
         </button>
     </form>
 </div>
@@ -19,13 +21,13 @@
 
 
 
-@if (ShopModel.ItemList.Any())
+@if (BuyModel.ItemsList.Any())
 {
     <ul class="shopping-list">
-        @for (int i = 0; i < ShopModel.ItemList.Count; i++)
+        @for (int i = 0; i < BuyModel.ItemsList.Count; i++)
         {
             <li>
-                @ShopModel.ItemList[i]
+                @BuyModel.ItemsList[i]
 
                 <form method="post" asp-page-handler="Remove" style="display:inline">
                     <input type="hidden" name="index" value="@i" />
@@ -39,7 +41,6 @@ else
 {
     <p>No items yet.</p>
 }
-
 <div class="bottom-bar">
     <a href="/" class="add-button back-button">
         <span>B A C K</span>
